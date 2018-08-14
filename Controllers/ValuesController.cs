@@ -29,6 +29,7 @@ namespace journal.service.Controllers
         [Route("/simplePost")]
         public IEnumerable<string> PostSimpleJsonBody([FromBody] SimplePostRequest SimplePostRequest)
         {
+            // asigning request body to model
             SimplePostRequest requestBody = SimplePostRequest;
             DateTime entryCreated = DateTime.Now;
             return new string[] { requestBody.entryId, requestBody.entry, entryCreated.ToString() };
